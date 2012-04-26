@@ -31,6 +31,7 @@ a:hover {
 #content {
  margin: 20px 40px 0 40px;
  padding: 0;
+ display: block;
 }
 
 #content p {
@@ -139,6 +140,21 @@ padding: 3px 0 7px 3px;
 #content ul {
  list-style-image: url(images/arrow.gif);
  margin: 10px 0 12px 0;
+}
+
+div.wrapper
+{  
+  width: auto;
+  display:block;
+  float: left;
+}
+
+#content ol{
+ margin: 10px 0 12px 0;
+}
+
+#content ol li {
+    list-style-type:none;
 }
 
 li.reactor {
