@@ -155,6 +155,7 @@ div.wrapper
 
 #content ol li {
     list-style-type:none;
+    font-size: 12px;
 }
 
 li.reactor {
