@@ -1,53 +1,139 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title> Hypertext Transfer Protocol -- HTTP/1.1 - Draft Standard RFC 2616</title>
-        <link rel='stylesheet' type='text/css' media='all' href='estilo.css' />
-        <script language="javascript" src="page.js" charset="charset=utf-8" type="text/javascript"></script>
-    </head>
-    <body>
-        <div id="content">
-            <h1>
-                <a name="select">&nbsp;</a>Hypertext Transfer Protocol -- HTTP/1.1
-            </h1>
-            <h3>Status of this Memo</h3>
-            <p>
-               This document specifies an Internet standards track protocol for the
-               Internet community, and requests discussion and suggestions for
-               improvements.  Please refer to the current edition of the "Internet
-               Official Protocol Standards" (STD 1) for the standardization state
-               and status of this protocol.  Distribution of this memo is unlimited.
-            </p>
-            <h3>Copyright Notice</h3>
-            <p>
-               Copyright (C) The Internet Society (1999).  All Rights Reserved.
-            </p>
-            <h3>Abstract</h3>
-            <p>
-                The Hypertext Transfer Protocol (HTTP) is an application-level
-               protocol for distributed, collaborative, hypermedia information
-               systems. It is a generic, stateless, protocol which can be used for
-               many tasks beyond its use for hypertext, such as name servers and
-               distributed object management systems, through extension of its
-               request methods, error codes and headers [47]. A feature of HTTP is
-               the typing and negotiation of data representation, allowing systems
-               to be built independently of the data being transferred.
-            </p>
-            <p>
-               HTTP has been in use by the World-Wide Web global information
-               initiative since 1990. This specification defines the protocol
-               referred to as "HTTP/1.1", and is an update to RFC 2068 [33].
-            </p>
-            <br clear="all" />
-            <div>
-                <a href="indice.html">Table of Contents</a>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Hypertext Transfer Protocol -- HTTP/1.1 - Draft Standard RFC 2616</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PROJETO DE TRADUÇÃO LIVRE E NÃO OFICIAL DO DOCUMENTO.">
+    <meta name="author" content="Andre Vitor Barbosa Cuba de Miranda">
+
+    <!-- CSS -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <style type="text/css">
+
+      /* Sticky footer styles
+      -------------------------------------------------- */
+
+      html,
+      body {
+        height: 100%;
+        /* The html and body elements cannot have any padding or margin. */
+      }
+
+      /* Wrapper for page content to push down footer */
+      #wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        /* Negative indent footer by it's height */
+        margin: 0 auto -60px;
+      }
+
+      /* Set the fixed height of the footer here */
+      #push,
+      #footer {
+        height: 60px;
+      }
+      #footer {
+        background-color: #f5f5f5;
+      }
+
+      /* Lastly, apply responsive CSS fixes as necessary */
+      @media (max-width: 767px) {
+        #footer {
+          margin-left: -20px;
+          margin-right: -20px;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+
+
+
+      /* Custom page CSS
+      -------------------------------------------------- */
+      /* Not required for template or sticky footer method. */
+
+      .container {
+        width: auto;
+        max-width: 680px;
+      }
+      .container .credit {
+        margin: 20px 0;
+      }
+      .container{
+          font-size: 12px;
+      }
+
+    </style>
+    <link href="/assets/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="/assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="/assets/ico/favicon.png"/>
+  </head>
+  <body>
+    <!-- Part 1: Wrap all page content here -->
+    <div id="wrap">
+      <!-- Begin page content -->
+        <div class="container">
+            <div class="masthead">
+            <h5>Hypertext Transfer Protocol -- HTTP/1.1 - Draft Standard RFC 2616</h5>
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="container">
+                  <ul class="nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="/doc/rfc2616.txt">RFC 2616</a></li>
+                    <li><a href="#">Autores</a></li>
+                    <li><a href="#">Colaboradores</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div><!-- /.navbar -->
+          </div>
+            <div id="content"></div>
+            <div id="push"></div>
         </div>
-        <div id="footer">
-            <p><a href="#top">Topo da P&aacute;gina</a></p>
-            <p>PROJETO DE TRADU&Ccedil;&Atilde;O LIVRE</p>
-            <p>PROJETO SOBRE LICEN&Ccedil;A <a href="http://www.gnu.org/licenses/gpl-3.0.txt">GPL v3.0</a> - 2012</p>
-        </div>
-    </body>
+    </div>
+    <div id="footer">
+      <div class="container">
+          <p class="muted credit">
+              PROJETO DE TRADUÇÃO LIVRE E NÃO OFICIAL DO DOCUMENTO.
+              <span class="pull-right">PROJETO SOBRE LICENÇA <a href="http://www.gnu.org/licenses/gpl-3.0.txt">GPL v3.0</a> - 2012 - 2013</span>
+          </p>
+      </div>
+    </div>
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster 
+    <script src="/assets/js/jquery.js"></script>-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        //Obtem valor da chave passada
+        function getURLParameter(name) {
+            return decodeURI(
+                (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
+            );
+        }
+        // Carrega conteudo dinamicamente de acordo com a url passada.
+        $(document).ready(function(){
+            var param = getURLParameter("page");
+            console.log(param);
+            if(!param || 0 !== param.length){
+                $.get("content/"+param+".html",null,function(data){
+                    $("#content").html(data);
+                });
+            }
+        });
+    </script>
+  </body>
 </html>
