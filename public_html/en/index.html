@@ -43,26 +43,26 @@
                     <div class="well"> 
                         <ul class="nav nav-tabs">
                           <li><a href="?page=introduction" data-toggle="tab">Introduction</a></li>
-                          <li><a href="?page=notational" data-toggle="tab">Notational Conventions <br/>and Generic Grammar</a></li>
-                          <li><a href="?page=introduction" data-toggle="tab">Protocol Parameters</a></li>
-                          <li><a href="?page=introduction" data-toggle="tab">HTTP Message</a></li>
-                          <li><a href="?page=introduction" data-toggle="tab">Request</a></li>
-                          <li><a href="?page=introduction" data-toggle="tab">Response</a></li>
-                          <li><a href="?page=introduction" data-toggle="tab">Entity</a></li>
-                          <li><a href="?page=introduction" data-toggle="tab">Connections</a></li>
-                          <li><a href="?page=introduction" data-toggle="tab">Method Definitions</a></li>
-                          <li><a href="?page=introduction" data-toggle="tab">Status Code Definitions</a></li>
-                          <li><a href="?page=introduction" data-toggle="tab">Access Authentication</a></li>
-                          <li><a href="?page=introduction" data-toggle="tab">Content Negotiation</a></li>
-                          <li><a href="?page=introduction" data-toggle="tab">Caching in HTTP</a></li>
-                          <li><a href="?page=introduction" data-toggle="tab">Header Field Definitions</a></li>
-                          <li><a href="?page=introduction" data-toggle="tab">Security Considerations</a></li>
-                          <li><a href="?page=introduction" data-toggle="tab">Acknowledgments</a></li>
-                          <li><a href="?page=introduction" data-toggle="tab">References</a></li>
-                          <li><a href="?page=introduction" data-toggle="tab">Authors' Addresses</a></li>
-                          <li><a href="?page=introduction" data-toggle="tab">Appendices</a></li>
-                          <li><a href="?page=introduction" data-toggle="tab">Index</a></li>
-                          <li><a href="?page=introduction" data-toggle="tab">Full Copyright Statement</a></li>
+                          <li><a href="?page=notational" data-toggle="tab">Notational Conventions and Generic Grammar</a></li>
+                          <li><a href="?page=protocol" data-toggle="tab">Protocol Parameters</a></li>
+                          <li><a href="?page=http" data-toggle="tab">HTTP Message</a></li>
+                          <li><a href="?page=request" data-toggle="tab">Request</a></li>
+                          <li><a href="?page=response" data-toggle="tab">Response</a></li>
+                          <li><a href="?page=entity" data-toggle="tab">Entity</a></li>
+                          <li><a href="?page=connections" data-toggle="tab">Connections</a></li>
+                          <li><a href="?page=method" data-toggle="tab">Method Definitions</a></li>
+                          <li><a href="?page=status" data-toggle="tab">Status Code Definitions</a></li>
+                          <li><a href="?page=access" data-toggle="tab">Access Authentication</a></li>
+                          <li><a href="?page=content" data-toggle="tab">Content Negotiation</a></li>
+                          <li><a href="?page=caching" data-toggle="tab">Caching in HTTP</a></li>
+                          <li><a href="?page=header" data-toggle="tab">Header Field Definitions</a></li>
+                          <li><a href="?page=security" data-toggle="tab">Security Considerations</a></li>
+                          <li><a href="?page=acknowledgments" data-toggle="tab">Acknowledgments</a></li>
+                          <li><a href="?page=references" data-toggle="tab">References</a></li>
+                          <li><a href="?page=authors" data-toggle="tab">Authors' Addresses</a></li>
+                          <li><a href="?page=appendices" data-toggle="tab">Appendices</a></li>
+                          <li><a href="?page=index" data-toggle="tab">Index</a></li>
+                          <li><a href="?page=full" data-toggle="tab">Full Copyright Statement</a></li>
                         </ul>
                     </div>
                 </div>  
@@ -82,7 +82,7 @@
                 var param = getURLParameter("page");
                 console.log(param);
                 if(!param || 0 !== param.length){
-                    $.get(param+".html",null,function(data){
+                    $.get("content/"+param+".html",null,function(data){
                         $("#content").html(data);
                     });
                 }
