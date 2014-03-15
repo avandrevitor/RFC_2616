@@ -1,0 +1,135 @@
+<h1>6 Response</h1>
+<hr class="col-md-12">
+<p>After receiving and interpreting a request message, a server responds
+   with an HTTP response message.
+</p>
+<br/>
+<h2 id="sec0">6.1 Status-Line</h2>
+<p>The first line of a Response message is the Status-Line, consisting
+   of the protocol version followed by a numeric status code and its
+   associated textual phrase, with each element separated by SP
+   characters. No CR or LF is allowed except in the final CRLF sequence.
+</p>
+<p class='text-center'>
+    Status-Line = HTTP-Version SP Status-Code SP Reason-Phrase CRLF
+</p>
+<br/>
+<h2 id="sec1">6.1.1 Status Code and Reason Phrase</h2>
+<p>The Status-Code element is a 3-digit integer result code of the
+   attempt to understand and satisfy the request. These codes are fully
+   defined in section 10. The Reason-Phrase is intended to give a short
+   textual description of the Status-Code. The Status-Code is intended
+   for use by automata and the Reason-Phrase is intended for the human
+   user. The client is not required to examine or display the Reason-
+   Phrase.
+</p>
+<p>The first digit of the Status-Code defines the class of response. The
+   last two digits do not have any categorization role. There are 5
+   values for the first digit:
+</p>
+<ul>
+    <li>1xx: Informational - Request received, continuing process</li>
+    <li>2xx: Success - The action was successfully received, understood,
+        and accepted</li>
+    <li>3xx: Redirection - Further action must be taken in order to
+        complete the request</li>
+    <li>4xx: Client Error - The request contains bad syntax or cannot
+        be fulfilled
+    </li>
+    <li>5xx: Server Error - The server failed to fulfill an apparently
+        valid request
+    </li>
+</ul>
+<p>The individual values of the numeric status codes defined for
+   HTTP/1.1, and an example set of corresponding Reason-Phrase's, are
+   presented below. The reason phrases listed here are only
+   recommendations -- they MAY be replaced by local equivalents without
+   affecting the protocol.
+</p>
+<dl class="dl-horizontal">
+  <dt>Status-Code</dt>
+  <dd>= "100"  ; Section 10.1.1: Continue</dd>
+  <dd>| "101"  ; Section 10.1.2: Switching Protocols</dd>
+  <dd>| "200"  ; Section 10.2.1: OK</dd>
+  <dd>| "201"  ; Section 10.2.2: Created</dd>
+  <dd>| "202"  ; Section 10.2.3: Accepted</dd>
+  <dd>| "203"  ; Section 10.2.4: Non-Authoritative Information</dd>
+  <dd>| "204"  ; Section 10.2.5: No Content</dd>
+  <dd>| "205"  ; Section 10.2.6: Reset Content</dd>
+  <dd>| "206"  ; Section 10.2.7: Partial Content</dd>
+  <dd>| "300"  ; Section 10.3.1: Multiple Choices</dd>
+  <dd>| "301"  ; Section 10.3.2: Moved Permanently</dd>
+  <dd>| "302"  ; Section 10.3.3: Found</dd>
+  <dd>| "303"  ; Section 10.3.4: See Other</dd>
+  <dd>| "304"  ; Section 10.3.5: Not Modified</dd>
+  <dd>| "305"  ; Section 10.3.6: Use Proxy</dd>
+  <dd>| "307"  ; Section 10.3.8: Temporary Redirect</dd>
+  <dd>| "400"  ; Section 10.4.1: Bad Request</dd>
+  <dd>| "401"  ; Section 10.4.2: Unauthorized</dd>
+  <dd>| "402"  ; Section 10.4.3: Payment Required</dd>
+  <dd>| "403"  ; Section 10.4.4: Forbidden</dd>
+  <dd>| "404"  ; Section 10.4.5: Not Found</dd>
+  <dd>| "405"  ; Section 10.4.6: Method Not Allowed</dd>
+  <dd>| "406"  ; Section 10.4.7: Not Acceptable</dd>
+  <dd>| "407"  ; Section 10.4.8: Proxy Authentication Required</dd>
+  <dd>| "408"  ; Section 10.4.9: Request Time-out</dd>
+  <dd>| "409"  ; Section 10.4.10: Conflict</dd>
+  <dd>| "410"  ; Section 10.4.11: Gone</dd>
+  <dd>| "411"  ; Section 10.4.12: Length Required</dd>
+  <dd>| "412"  ; Section 10.4.13: Precondition Failed</dd>
+  <dd>| "413"  ; Section 10.4.14: Request Entity Too Large</dd>
+  <dd>| "414"  ; Section 10.4.15: Request-URI Too Large</dd>
+  <dd>| "415"  ; Section 10.4.16: Unsupported Media Type</dd>
+  <dd>| "416"  ; Section 10.4.17: Requested range not satisfiable</dd>
+  <dd>| "417"  ; Section 10.4.18: Expectation Failed</dd>
+  <dd>| "500"  ; Section 10.5.1: Internal Server Error</dd>
+  <dd>| "501"  ; Section 10.5.2: Not Implemented</dd>
+  <dd>| "502"  ; Section 10.5.3: Bad Gateway</dd>
+  <dd>| "503"  ; Section 10.5.4: Service Unavailable</dd>
+  <dd>| "504"  ; Section 10.5.5: Gateway Time-out</dd>
+  <dd>| "505"  ; Section 10.5.6: HTTP Version not supported</dd>
+  <dd>| extension-code</dd>
+  <dt>extension-code</dt><dd>= 3DIGIT</dd>
+  <dt>Reason-Phrase</dt><dd>= *&lt;TEXT, excluding CR, LF&gt;</dd>
+</dl>
+<p>HTTP status codes are extensible. HTTP applications are not required
+   to understand the meaning of all registered status codes, though such
+   understanding is obviously desirable. However, applications MUST
+   understand the class of any status code, as indicated by the first
+   digit, and treat any unrecognized response as being equivalent to the
+   x00 status code of that class, with the exception that an
+   unrecognized response MUST NOT be cached. For example, if an
+   unrecognized status code of 431 is received by the client, it can
+   safely assume that there was something wrong with its request and
+   treat the response as if it had received a 400 status code. In such
+   cases, user agents SHOULD present to the user the entity returned
+   with the response, since that entity is likely to include human-
+   readable information which will explain the unusual status.
+</p>
+<p>
+<br/>
+<h2 id="sec2">6.2 Response Header Fields</h2>
+<p>The response-header fields allow the server to pass additional
+   information about the response which cannot be placed in the Status-
+   Line. These header fields give information about the server and about
+   further access to the resource identified by the Request-URI.
+</p>
+<dl class="dl-horizontal">
+  <dt>response-header</dt>
+  <dd>= Accept-Ranges           ; Section 14.5</dd>
+  <dd>| Age                     ; Section 14.6</dd>
+  <dd>| ETag                    ; Section 14.19</dd>
+  <dd>| Location                ; Section 14.30</dd>
+  <dd>| Proxy-Authenticate      ; Section 14.33</dd>
+  <dd>| Retry-After             ; Section 14.37</dd>
+  <dd>| Server                  ; Section 14.38</dd>
+  <dd>| Vary                    ; Section 14.44</dd>
+  <dd>| WWW-Authenticate        ; Section 14.47</dd>
+</dl>
+<p>Response-header field names can be extended reliably only in
+   combination with a change in the protocol version. However, new or
+   experimental header fields MAY be given the semantics of response-
+   header fields if all parties in the communication recognize them to
+   be response-header fields. Unrecognized header fields are treated as
+   entity-header fields.
+</p>
