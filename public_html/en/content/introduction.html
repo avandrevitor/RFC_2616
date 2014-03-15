@@ -1,6 +1,6 @@
 <h1>1 Introduction</h1>
-<h2 id="sec0">1.1 Purpose</h2>
 <hr class="col-md-12">
+<h2 id="sec0">1.1 Purpose</h2>
 <p>
     The Hypertext Transfer Protocol (HTTP) is an application-level
    protocol for distributed, collaborative, hypermedia information
@@ -42,6 +42,7 @@
    and WAIS [10] protocols. In this way, HTTP allows basic hypermedia
    access to resources available from diverse applications.
 </p>
+<br/>
 <h2 id="sec1">1.2 Requirements</h2>
 <p>
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT","SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
@@ -57,6 +58,7 @@ document are to be interpreted as described in RFC 2119 [34].
    protocols is said to be "conditionally compliant."
 
 </p>
+<br/>
 <h2 id="sec2">1.3 Terminology</h2>
 <p>
 This specification uses a number of terms to refer to the roles played by participants in, and objects of, the HTTP communication.
@@ -221,6 +223,7 @@ This specification uses a number of terms to refer to the roles played by partic
       and "outbound" means "traveling toward the user agent"
   </dd>
 </dl>
+<br/>
 <h2 id="sec3">1.4 Overall Operation</h2>
 <p>
 The HTTP protocol is a request/response protocol. A client sends a
@@ -239,7 +242,7 @@ Most HTTP communication is initiated by a user agent and consists of
    simplest case, this may be accomplished via a single connection (v)
    between the user agent (UA) and the origin server (O).
 </p>             
-<p>
+<p class="text-center">
           request chain ------------------------><br/>
        UA -------------------v------------------- O<br/>
           <----------------------- response chain<br/>
@@ -259,7 +262,7 @@ A more complicated situation occurs when one or more intermediaries
    firewall) even when the intermediary cannot understand the contents
    of the messages.
 </p>
-<p>
+<p class="text-center">
         request chain --------------------------------------><br/>
        UA -----v----- A -----v----- B -----v----- C -----v----- O<br/>
           <------------------------------------- response chain<br/>
@@ -286,7 +289,7 @@ Any party to the communication which is not acting as a tunnel may
    cached copy of an earlier response from O (via C) for a request which
    has not been cached by UA or A.
 </p>
-<p>
+<p class="text-center">
 request chain ----------><br/>
 UA -----v----- A -----v----- B - - - - - - C - - - - - - O<br/>
 <--------- response chain<br/>
