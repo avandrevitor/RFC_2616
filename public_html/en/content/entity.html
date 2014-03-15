@@ -1,0 +1,78 @@
+<h1>7 Entity</h1>
+<hr class="col-md-12">
+<p>Request and Response messages MAY transfer an entity if not otherwise
+   restricted by the request method or response status code. An entity
+   consists of entity-header fields and an entity-body, although some
+   responses will only include the entity-headers.
+</p>
+<p>In this section, both sender and recipient refer to either the client
+   or the server, depending on who sends and who receives the entity.
+</p>
+<h2 id="sec0">7.1 Entity Header Fields</h2>
+<p>Entity-header fields define metainformation about the entity-body or,
+   if no body is present, about the resource identified by the request.
+   Some of this metainformation is OPTIONAL; some might be REQUIRED by
+   portions of this specification.
+</p>
+<dl class="dl-horizontal">
+  <dt>entity-header</dt>
+  <dd>= Allow                    ; Section 14.7</dd>
+  <dd>| Content-Encoding         ; Section 14.11</dd>
+  <dd>| Content-Language         ; Section 14.12</dd>
+  <dd>| Content-Length           ; Section 14.13</dd>
+  <dd>| Content-Location         ; Section 14.14</dd>
+  <dd>| Content-MD5              ; Section 14.15</dd>
+  <dd>| Content-Range            ; Section 14.16</dd>
+  <dd>| Content-Type             ; Section 14.17</dd>
+  <dd>| Expires                  ; Section 14.21</dd>
+  <dd>| Last-Modified            ; Section 14.29</dd>
+  <dd>| extension-header</dd>
+  <dt>extension-header</dt><dd>= message-header</dd>
+</dl>
+<p>The extension-header mechanism allows additional entity-header fields
+   to be defined without changing the protocol, but these fields cannot
+   be assumed to be recognizable by the recipient. Unrecognized header
+   fields SHOULD be ignored by the recipient and MUST be forwarded by
+   transparent proxies.
+</p>
+<br/>
+<h2 id="sec0">7.2 Entity Body</h2>
+<p>The entity-body (if any) sent with an HTTP request or response is in
+   a format and encoding defined by the entity-header fields.
+</p>
+<p class='text-center'>
+    entity-body    = *OCTET
+</p>
+<p>An entity-body is only present in a message when a message-body is
+   present, as described in section 4.3. The entity-body is obtained
+   from the message-body by decoding any Transfer-Encoding that might
+   have been applied to ensure safe and proper transfer of the message.
+</p>
+<br/>
+<h2 id="sec0">7.2.1 Type</h2>
+<p>When an entity-body is included with a message, the data type of that
+   body is determined via the header fields Content-Type and Content-
+   Encoding. These define a two-layer, ordered encoding model:
+</p>
+<p class='text-center'>
+    entity-body := Content-Encoding( Content-Type( data ) )
+</p>
+<p>Content-Type specifies the media type of the underlying data.
+   Content-Encoding may be used to indicate any additional content
+   codings applied to the data, usually for the purpose of data
+   compression, that are a property of the requested resource. There is
+   no default encoding.
+<p> Any HTTP/1.1 message containing an entity-body SHOULD include a
+   Content-Type header field defining the media type of that body. If
+   and only if the media type is not given by a Content-Type field, the
+   recipient MAY attempt to guess the media type via inspection of its
+   content and/or the name extension(s) of the URI used to identify the
+   resource. If the media type remains unknown, the recipient SHOULD
+   treat it as type "application/octet-stream".
+</p>
+<br/>
+<h2 id="sec0">7.2.2 Entity Length</h2>
+<p>The entity-length of a message is the length of the message-body
+   before any transfer-codings have been applied. Section 4.4 defines
+   how the transfer-length of a message-body is determined.
+</p>
