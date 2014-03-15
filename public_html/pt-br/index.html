@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hypertext Transfer Protocol -- HTTP/1.1 - Draft Standard RFC 2616</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="PROJETO DE TRADUÇÃO LIVRE E NÃO OFICIAL DO DOCUMENTO.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+        <!--[if lt IE 9]>
+          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <!-- CSS code from Bootply.com editor -->
+        <style type="text/css"> header {margin-bottom:30px; }</style>
+    </head>
+    <body>
+        <header class="navbar navbar-default navbar-static-top" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                  <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a href="/" class="navbar-brand">HTTP/1.1</a>
+                </div>
+                <nav class="collapse navbar-collapse" role="navigation">
+                  <ul class="nav navbar-nav">
+                    <li>
+                      <a href="#">Colaboradores</a>
+                    </li>
+                    <li>
+                      <a href="/file/rfc2616.txt">Vesão em TXT</a>
+                    </li>
+                  </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3" id="leftCol">
+                    <div class="well"> 
+                        <ul class="nav nav-tabs">
+                          <li><a href="?page=introduction" data-toggle="tab">Introdução</a></li>
+                          <li><a href="?page=notational" data-toggle="tab">Notações, Convenções e Grámatica Genérica</a></li>
+                          <li><a href="?page=protocol" data-toggle="tab">Parâmetros do Protocolo</a></li>
+                          <li><a href="?page=http" data-toggle="tab">Mensagem HTTP</a></li>
+                          <li><a href="?page=request" data-toggle="tab">Request(Requisição)</a></li>
+                          <li><a href="?page=response" data-toggle="tab">Response(Resposta)</a></li>
+                          <li><a href="?page=entity" data-toggle="tab">Entity(Entidade)</a></li>
+                          <li><a href="?page=connections" data-toggle="tab">Conexões</a></li>
+                          <li><a href="?page=method" data-toggle="tab">Definições dos Métodos</a></li>
+                          <li><a href="?page=status" data-toggle="tab">Definições Códigos e Status</a></li>
+                          <li><a href="?page=access" data-toggle="tab">Autenticação de Acesso</a></li>
+                          <li><a href="?page=content" data-toggle="tab">Negóciação de Conteúdo</a></li>
+                          <li><a href="?page=caching" data-toggle="tab">Cache do HTTP</a></li>
+                          <li><a href="?page=header" data-toggle="tab">Definições dos Campos dos Cabeçalho</a></li>
+                          <li><a href="?page=security" data-toggle="tab">Considerações sobre Segurança</a></li>
+                          <li><a href="?page=acknowledgments" data-toggle="tab">Agradecimentos</a></li>
+                          <li><a href="?page=references" data-toggle="tab">Refêrencias</a></li>
+                          <li><a href="?page=authors" data-toggle="tab">Contato dos Autores</a></li>
+                          <li><a href="?page=appendices" data-toggle="tab">Apêndice</a></li>
+                          <li><a href="?page=index" data-toggle="tab">Indice</a></li>
+                          <li><a href="?page=full" data-toggle="tab">Declaração completa Copyright</a></li>
+                        </ul>
+                    </div>
+                </div>  
+      		<div id="content" class="col-md-9"></div> 
+            </div>
+        </div>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript">
+            //Obtem valor da chave passada
+            function getURLParameter(name) {
+                return decodeURI(
+                    (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
+                );
+            }
+            // Carrega conteudo dinamicamente de acordo com a url passada.
+            $(document).ready(function(){
+                var param = getURLParameter("page");
+                if(!param || 0 !== param.length){
+                    $.get("content/"+param+".html",null,function(data){
+                        $("#content").html(data);
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
