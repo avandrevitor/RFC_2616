@@ -1,7 +1,7 @@
-<h1>8 Connections</h1>
+<h1>Connections</h1>
 <hr class="col-md-12">
-<h2 id="sec0">8.1 Persistent Connections</h2>
-<h3 id="sec1">8.1.1 Purpose</h3>
+<h2 id="sec0">Persistent Connections</h2>
+<h3 id="sec1">Purpose</h3>
 <p>Prior to persistent connections, a separate TCP connection was
    established to fetch each URL, increasing the load on HTTP servers
    and causing congestion on the Internet. The use of inline images and
@@ -41,7 +41,7 @@
 <p>HTTP implementations SHOULD implement persistent connections.
 </p>
 <br/>
-<h3 id="sec3">8.1.2 Overall Operation</h3>
+<h3 id="sec3">Overall Operation</h3>
 <p>A significant difference between HTTP/1.1 and earlier versions of
    HTTP is that persistent connections are the default behavior of any
    HTTP connection. That is, unless otherwise indicated, the client
@@ -55,7 +55,7 @@
    connection.
 </p>
 <br/>
-<h4 id='sec4'>8.1.2.1 Negotiation</h4>
+<h4 id='sec4'>Negotiation</h4>
 <p>An HTTP/1.1 server MAY assume that a HTTP/1.1 client intends to
    maintain a persistent connection unless a Connection header including
    the connection-token "close" was sent in the request. If the server
@@ -83,7 +83,7 @@
    of the connection), as described in section 4.4.
 </p>
 <br/>
-<h3 id="sec4">8.1.2.2 Pipelining</h3>
+<h3 id="sec4">Pipelining</h3>
 <p>A client that supports persistent connections MAY "pipeline" its
    requests (i.e., send multiple requests without waiting for each
    response). A server MUST send its responses to those requests in the
@@ -105,7 +105,7 @@
    response status for the previous request.
 </p>
 <br/>
-<h2 id="sec5">8.1.3 Proxy Servers</h2>
+<h2 id="sec5">Proxy Servers</h2>
 <p>It is especially important that proxies correctly implement the
    properties of the Connection header field as specified in section
    14.10.
@@ -121,7 +121,7 @@
    many HTTP/1.0 clients).
 </p>
 <br/>
-<h2 id="sec6">8.1.4 Practical Considerations</h2>
+<h2 id="sec6">Practical Considerations</h2>
 <p>Servers will usually have some time-out value beyond which they will
    no longer maintain an inactive connection. Proxy servers might make
    this a higher value since it is likely that the client will be making
@@ -168,15 +168,15 @@
    times and avoid congestion.
 </p>
 <br/>
-<h2 id="sec8">8.2 Message Transmission Requirements</h2>
-<h3 id="sec9">8.2.1 Persistent Connections and Flow Control</h3>
+<h2 id="sec8">Message Transmission Requirements</h2>
+<h3 id="sec9">Persistent Connections and Flow Control</h3>
 <p>HTTP/1.1 servers SHOULD maintain persistent connections and use TCP's
    flow control mechanisms to resolve temporary overloads, rather than
    terminating connections with the expectation that clients will retry.
    The latter technique can exacerbate network congestion.
 </p>
 <br/>
-<h3 id="sec10">8.2.2 Monitoring Connections for Error Status Messages</h3>
+<h3 id="sec10">Monitoring Connections for Error Status Messages</h3>
 <p>An HTTP/1.1 (or later) client sending a message-body SHOULD monitor
    the network connection for an error status while it is transmitting
    the request. If the client sees an error status, it SHOULD
@@ -187,7 +187,7 @@
    close the connection.
 </p>
 <br/>
-<h3 id="sec11">8.2.3 Use of the 100 (Continue) Statu</h3>
+<h3 id="sec11">Use of the 100 (Continue) Statu</h3>
 <p>The purpose of the 100 (Continue) status (see section 10.1.1) is to
    allow a client that is sending a request message with a request body
    to determine if the origin server is willing to accept the request

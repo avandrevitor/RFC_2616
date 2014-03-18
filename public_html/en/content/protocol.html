@@ -1,6 +1,6 @@
-<h1>3 Protocol Parameters</h1>
+<h1>Protocol Parameters</h1>
 <hr class="col-md-12">
-<h2 id="sec0">3.1 HTTP Version</h2>
+<h2 id="sec0">HTTP Version</h2>
 <p>
     HTTP uses a "&lt;major&gt;.&lt;minor&gt;" numbering scheme to indicate versions
    of the protocol. The protocol versioning policy is intended to allow
@@ -66,7 +66,7 @@
         fields required or forbidden by the versions involved.</p>
 </div>
 <br/>
-<h2 id="sec1">3.2 Uniform Resource Identifiers</h2>
+<h2 id="sec1">Uniform Resource Identifiers</h2>
 <p>
     URIs have been known by many names: WWW addresses, Universal Document
    Identifiers, Universal Resource Identifiers [3], and finally the
@@ -76,7 +76,7 @@
    other characteristic--a resource.
 </p>
 <br/>
-<h3 id="sec2">3.2.1 General Syntax</h3>
+<h3 id="sec1">General Syntax</h3>
 <p>
    URIs in HTTP can be represented in absolute form or relative to some
    known base URI [11], depending upon the context of their use. The two
@@ -104,7 +104,7 @@
       implementations might not properly support these lengths.</p>
 </div>
 <br/>
-<h3 id="sec4">3.2.2 HTTP URL</h3>
+<h3 id="sec2">HTTP URL</h3>
 <p>
     The "http" scheme is used to locate network resources via the HTTP
    protocol. This section defines the scheme-specific syntax and
@@ -127,7 +127,7 @@
    name.
 </p>
 <br/>
-<h3 id="sec4">3.2.3 URI Comparison</h3>
+<h3 id="sec3">URI Comparison</h3>
 <p>
     When comparing two URIs to decide if they match or not, a client
    SHOULD use a case-sensitive octet-by-octet comparison of the entire
@@ -156,8 +156,8 @@
     <li>http://ABC.com:/%7esmith/home.html</li>
 </ul>
 <br/>
-<h2 id="sec5">3.3 Date/Time Formats</h2>
-<h3 id="sec5.1">3.3.1 Full Date</h3>
+<h2 id="sec5">Date/Time Formats</h2>
+<h3 id="sec5.1">Date</h3>
 <p>
     HTTP applications have historically allowed three different formats
    for the representation of date/time stamps:
@@ -216,7 +216,7 @@
     </p>
 </div>
 <br/>
-<h3 id="sec5.2">3.3.2 Delta Seconds</h3>
+<h3 id="sec5.2">Delta Seconds</h3>
 <p>
     Some HTTP header fields allow a time value to be specified as an
    integer number of seconds, represented in decimal, after the time
@@ -226,7 +226,7 @@
     delta-seconds  = 1*DIGIT
 </p>
 <br/>
-<h2 id="sec6">3.4 Character Sets</h2>
+<h2 id="sec6">Character Sets</h2>
 <p>
     HTTP uses the same definition of the term "character set" as that
    described for MIME:
@@ -272,7 +272,7 @@
     Implementors should be aware of IETF character set requirements [38]
    [41].
 </p>
-<h3 id="sec6.1">3.4.1 Missing Charset</h3>
+<h3 id="sec6.1">Missing Charset</h3>
 <p>
     Some HTTP/1.0 software has interpreted a Content-Type header without
    charset parameter incorrectly to mean "recipient should guess."
@@ -289,7 +289,7 @@
    section 3.7.1.
 </p>
 <br/>
-<h2 id="sec7">3.5 Content Codings</h2>
+<h2 id="sec7">Content Codings</h2>
 <p>
     Content coding values indicate an encoding transformation that has
    been or can be applied to an entity. Content codings are primarily
@@ -355,7 +355,7 @@
    conform to the purpose of content coding defined in this section.
 </p>
 <br/>
-<h2 id="sec8">3.6 Transfer Codings</h2>
+<h2 id="sec8">Transfer Codings</h2>
 <p>
     Transfer-coding values are used to indicate an encoding
    transformation that has been, can be, or may need to be applied to an
@@ -416,7 +416,7 @@
    client.
 </p>
 <br/>
-<h3 id="sec9">3.6.1 Chunked Transfer Coding</h3>
+<h3 id="sec9">Chunked Transfer Coding</h3>
 <p>
     The chunked encoding modifies the body of a message in order to
    transfer it as a series of chunks, each with its own size indicator,
@@ -486,7 +486,7 @@
    they do not understand.
 </p>
 <br/>
-<h2 id="sec10">3.7 Media Types</h2>
+<h2 id="sec10">Media Types</h2>
 <p>HTTP uses Internet Media Types [17] in the Content-Type (section
    14.17) and Accept (section 14.1) header fields in order to provide
    open and extensible data typing and type negotiation.
@@ -521,7 +521,7 @@
    discouraged.
 </p>
 <br/>
-<h3 id="sec11">3.7.1 Canonicalization and Text Defaults</h3>
+<h3 id="sec11">Canonicalization and Text Defaults</h3>
 <p>
     Internet media types are registered with a canonical form. An
    entity-body transferred via HTTP messages MUST be represented in the
@@ -558,7 +558,7 @@
    section 3.4.1 for compatibility problems.
 </p>
 <br/>
-<h3 id="sec12">3.7.2 Multipart Types</h3>
+<h3 id="sec12">Multipart Types</h3>
 <p>
     MIME provides for a number of "multipart" types -- encapsulations of
    one or more entities within a single message-body. All multipart
@@ -648,7 +648,7 @@
    relative degradation in desired quality.
 </p>
 <br/>
-<h2 id="sec15">3.10 Language Tags</h2>
+<h2 id="sec15">Language Tags</h2>
 <p>
     A language tag identifies a natural language spoken, written, or
    otherwise conveyed by human beings for communication of information
@@ -714,7 +714,7 @@
    entities.
 </p>
 <br/>
-<h2 id="sec17">3.12 Range Units</h2>
+<h2 id="sec17">Range Units</h2>
 <p>
     HTTP/1.1 allows a client to request that only part (a range of) the
    response entity be included within the response. HTTP/1.1 uses range

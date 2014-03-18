@@ -1,4 +1,4 @@
-<h1>9 Method Definitions</h1>
+<h1>Method Definitions</h1>
 <p>The set of common methods for HTTP/1.1 is defined below. Although
    this set can be expanded, additional methods cannot be assumed to
    share the same semantics for separately extended clients and servers.
@@ -7,8 +7,8 @@
    HTTP/1.1 requests.
 </p>
 <hr class="col-md-12">
-<h2 id="sec0">9.1 Safe and Idempotent Methods</h2>
-<h3 id='sec1'>9.1.1 Safe Methods</h3>
+<h2 id="sec0">Safe and Idempotent Methods</h2>
+<h3 id='sec1'>Safe Methods</h3>
 <p>Implementors should be aware that the software represents the user in
    their interactions over the Internet, and should be careful to allow
    the user to be aware of any actions they might take which may have an
@@ -28,7 +28,7 @@
    so therefore cannot be held accountable for them.
 </p>
 <br/>
-<h3 id='sec2'>9.1.2 Idempotent Methods</h3>
+<h3 id='sec2'>Idempotent Methods</h3>
 <p>Methods can also have the property of "idempotence" in that (aside
    from error or expiration issues) the side-effects of N > 0 identical
    requests is the same as for a single request. The methods GET, HEAD,
@@ -48,7 +48,7 @@
    same set of resources).
 </p>
 <br/>
-<h2 id="sec3">9.2 OPTIONS</h2>
+<h2 id="sec3">OPTIONS</h2>
 <p>The OPTIONS method represents a request for information about the
    communication options available on the request/response chain
    identified by the Request-URI. This method allows the client to
@@ -101,7 +101,7 @@
    request MUST NOT include a Max-Forwards field.
 </p>
 <br/>
-<h2 id='sec2'>9.3 GET</h2>
+<h2 id='sec2'>GET</h2>
 <p>The GET method means retrieve whatever information (in the form of an
    entity) is identified by the Request-URI. If the Request-URI refers
    to a data-producing process, it is the produced data which shall be
@@ -129,7 +129,7 @@
 </p>
 <p>See section 15.1.3 for security considerations when used for forms.</p>
 <br/>
-<h2 id="sec4">9.4 HEAD</h2>
+<h2 id="sec4">HEAD</h2>
 <p>The HEAD method is identical to GET except that the server MUST NOT
    return a message-body in the response. The metainformation contained
    in the HTTP headers in response to a HEAD request SHOULD be identical
@@ -148,7 +148,7 @@
    stale.
 </p>
 <br/>
-<h2 id="sec5">9.5 POST</h2>
+<h2 id="sec5">POST</h2>
 <p>The POST method is used to request that the origin server accept the
    entity enclosed in the request as a new subordinate of the resource
    identified by the Request-URI in the Request-Line. POST is designed
@@ -192,7 +192,7 @@
 <p>See section 15.1.3 for security considerations.
 </p>
 <br/>
-<h2 id="sec6">9.6 PUT</h2>
+<h2 id="sec6">PUT</h2>
 <p>The PUT method requests that the enclosed entity be stored under the
    supplied Request-URI. If the Request-URI refers to an already
    existing resource, the enclosed entity SHOULD be considered as a
@@ -243,7 +243,7 @@
    created or modified by the PUT.
 </p>
 <br/>
-<h2 id="sec7">9.7 DELETE</h2>
+<h2 id="sec7">DELETE</h2>
 <p>The DELETE method requests that the origin server delete the resource
    identified by the Request-URI. This method MAY be overridden by human
    intervention (or other means) on the origin server. The client cannot
@@ -263,7 +263,7 @@
    one or more currently cached entities, those entries SHOULD be
    treated as stale. Responses to this method are not cacheable.</p>
 <br/>
-<h2 id="sec8">9.8 TRACE</h2>
+<h2 id="sec8">TRACE</h2>
 <p>The TRACE method is used to invoke a remote, application-layer loop-
    back of the request message. The final recipient of the request
    SHOULD reflect the message received back to the client as the
@@ -285,7 +285,7 @@
    "message/http". Responses to this method MUST NOT be cached.
 </p>
 <br/>
-<h2 id="sec9">9.9 CONNECT</h2>
+<h2 id="sec9">CONNECT</h2>
 <p>
     This specification reserves the method name CONNECT for use with a
    proxy that can dynamically switch to being a tunnel (e.g. SSL

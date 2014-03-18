@@ -1,6 +1,6 @@
-<h1>4 HTTP Message</h1>
+<h1>HTTP Message</h1>
 <hr class="col-md-12">
-<h2 id="sec0">4.1 Message Types</h2>
+<h2 id="sec0">Message Types</h2>
 <p>
     HTTP messages consist of requests from client to server and responses
    from server to client.
@@ -32,7 +32,7 @@
    extra CRLF.
 </p>
 <br/>
-<h2 id="sec1">4.2 Message Headers</h2>
+<h2 id="sec1">Message Headers</h2>
 <p>HTTP header fields, which include general-header (section 4.5),
    request-header (section 5.3), response-header (section 6.2), and
    entity-header (section 7.1) fields, follow the same generic format as
@@ -82,7 +82,7 @@
    change the order of these field values when a message is forwarded.
 </p>
 <br/>
-<h2 id="sec2">4.3 Message Body</h2>
+<h2 id="sec2">Message Body</h2>
 <p>The message-body (if any) of an HTTP message is used to carry the
    entity-body associated with the request or response. The message-body
    differs from the entity-body only when a transfer-coding has been
@@ -123,7 +123,7 @@
    message-body, although it MAY be of zero length.
 </p>
 <br/>
-<h2 id="sec3">4.4 Message Length</h2>
+<h2 id="sec3">Message Length</h2>
 <p>
     The transfer-length of a message is the length of the message-body as
    it appears in the message; that is, after any transfer-codings have
@@ -190,7 +190,7 @@
    invalid length is received and detected.
 </p>
 <br/>
-<h2 id="sec4">4.5 General Header Fields</h2>
+<h2 id="sec4">General Header Fields</h2>
 <p>
     There are a few header fields which have general applicability for
    both request and response messages, but which do not apply to the
